@@ -11,11 +11,12 @@ const refs = {
   list: document.querySelector("#ingredients"),
 }
 
-const items = ingredients.map(el => {
-  const elements = document.createElement("li");
-  elements.textContent = el;
-  elements.classList.add("item");
-  return elements;
-})
+  const products = ingredients.map(ingredient => {
+    const makeIngredientEl = document.createElement('li');
+    makeIngredientEl.textContent = ingredient;
+    return makeIngredientEl;
+  });
 
-refs.list.append(...items);
+  console.log(products);
+  const parentNode = document.querySelector("#ingredients");
+  parentNode.append(...products);

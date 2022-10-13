@@ -1,6 +1,10 @@
-const inputName = document.querySelector("#name-input");
-const outputName = document.querySelector("#name-output");
-inputName.addEventListener('input', onInputChange);
-function onInputChange (event) {
-    outputName.textContent=event.currentTarget.value
+const inputRef = document.querySelector("#name-input");
+const anonymRef = document.querySelector('#name-output');
+inputRef.addEventListener('input', onInputChange)
+function onInputChange(event) {
+    let changedWord = event.currentTarget.value;
+    anonymRef.textContent = changedWord;
+    if (event.currentTarget.value === '') {
+        anonymRef.textContent = 'Anonymous'
+    }
 }
